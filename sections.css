@@ -1,0 +1,129 @@
+body
+{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+
+.weather-square
+{
+    background-size: cover;
+
+    width: 180px;
+    height: 230px;
+    margin: 5%;
+
+    color: white;
+
+    text-align: center;
+
+    border-radius: 15px;
+}
+
+.weather-text
+{
+    color: white;
+    font-size: 40px;
+    display: inline-block;
+}
+
+
+.title-div
+{
+    color: black;
+}
+
+.city
+{
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.temp
+{
+    padding-top: 12px;
+    margin: 0px;
+    font-size: 45px;
+}
+
+
+#city-input
+{
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid lightgray;
+    width: 10%;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#city-input:focus
+{
+    outline:none;
+    border-color: #005985;
+    width: 20%;
+    box-shadow:
+        0 0 50px #fff,            /* outer white */
+        -10px 0 80px #f0f,        /* outer left magenta */
+        10px 0 80px #0ff;         /* outer right cyan */
+}
+
+.plus-btn
+{
+    outline:none;
+    display: inline-block;
+    /* padding: 0.3em 1em; */
+    text-decoration: none;
+    color: #005985;
+    border: solid 1px #005985;
+    border-radius: 3px;
+    transition: .4s;
+    background-color: white;
+
+}
+
+.plus-btn:hover
+{
+    background: #005985;
+    color: white;
+}
+
+.classname {
+    -webkit-animation-name: cssAnimation;
+    -webkit-animation-duration:.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+
+    background-size: cover;
+
+    /* width: 180px; */
+    /* height: 230px; */
+    margin: 5%;
+
+    color: white;
+
+    text-align: center;
+
+    border-radius: 15px;
+}
+
+@-webkit-keyframes cssAnimation
+{
+    from
+    {
+        width: 0px;
+        height: 0px;
+        /* -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(100px); */
+    }
+    to
+    {
+        /* background-size: cover; */
+
+        width: 180px;
+        height: 230px;
+        /* -webkit-transform: rotate(0deg) scale(2) skew(0deg) translate(100px); */
+    }
+}

@@ -20,14 +20,23 @@
 
 
 <div class="main">
+    <div class="title-div">
+        <h1 class = title-text>Weather Board</h1>
+    </div>
     <div class="input-div">
-        <input type="text" id="city-input"/>
-        <button onclick=getTemperature()>Submit</button>
+        <input type="text" id="city-input" placeholder="City"/>
+        <button class="plus-btn" onclick=getTemperature()>+</button>
     </div>
-    <div class="weather-output">
-        <h2>Temperature</h2>
-        <p id="temp-output"></p>
+    <div class="weather-square" id="squareOne">
+        <div class="square-text">
+            <h2 class="city" id="location"></h2>
+            <p class="temp" id="temperatureId"></p>
+        </div>
+        
     </div>
+
+    
+
 </div>
 
 
