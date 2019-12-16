@@ -39,8 +39,12 @@ function getTemperature()
         //find out if the sun is up by the time, sunrise and sunset
         var isDay = isSun(json.dt, json.sys.sunrise, json.sys.sunset);
 
+        //set humidity, wind speed, feels like
+        document.getElementById("feels-like").innerHTML = "Feels Like: " + parseInt(json.main.feels_like) + "&#176";
+        document.getElementById("humidity").innerHTML = "Humidity: " + parseInt(json.main.humidity) + "%";
+        document.getElementById("wind-speed").innerHTML = "Wind Speed: " + parseInt(json.wind.speed) + "mph";
+
         //set an empty video title, append "n" if night, "d" if day (skip fo thunderstorms)
-        
         if (isDay && firstDigit != 2)
         {
             videoTitle += "d"; 
