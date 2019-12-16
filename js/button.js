@@ -17,62 +17,107 @@ function getTemperature()
 {
     const city = document.getElementById("city-input").value;
     var temp;
+    var videoTitle = "";
 
-    //set text of the city entered
-    document.getElementById("location").innerHTML = city + "";
 
-    //set background image
-    //document.getElementById("squareOne").style.backgroundImage = "url('pictures/clouds.jpg')";
-    //document.getElementById("video-src").src = "pictures/lightning1.mp4"
-    
-    
+    //api call for city and 
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+ city + "&APPID=23d18f8ee7da3a481d47d75065594755&units=imperial")
-        .then(response => response.json())
-        .then(json => document.getElementById("temperatureId").innerHTML = parseInt(json.main.temp) + "&#176"); //degree symbol
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+        //set the temperature to whatever the temp is 
+        document.getElementById("temperatureId").innerHTML = parseInt(json.main.temp) + "&#176"; //degree symbol
+        //set city to the city in the json
+        document.getElementById("location").innerHTML = json.name;
+        
+        //get the id of the weather
+        const id = json.weather[0].id;
+        //seperate digits for easy code reading and video selection
+        const firstDigit = Math.floor((id / 100) % 10);
+        const thirdDigit = Math.floor((id / 1) % 10);
 
+        //find out if the sun is up by the time, sunrise and sunset
+        var isDay = isSun(json.dt, json.sys.sunrise, json.sys.sunset);
+
+        //set an empty video title, append "n" if night, "d" if day (skip fo thunderstorms)
+        
+        if (isDay && firstDigit != 2)
+        {
+            videoTitle += "d"; 
+        }
+        else if (firstDigit != 2)
+        {
+            videoTitle += "n";
+        }
+
+
+
+        //get rest of videoTitle based on ID
+        //special title for drizzle, 
+        if (firstDigit != 8 && firstDigit != 7)
+        {
+            videoTitle += (firstDigit + "00");
+        }
+        //atmosphere conditions - set to partly cloudy by default
+        else if (firstDigit == 7)
+        {
+            videoTitle += "804";
+        }
+        //different amounts of clouds
+        else
+        {
+            //clear
+            if (thirdDigit == 0)
+            {
+                videoTitle += "800";
+            }
+            else if (isDay && [1,2,3].includes(thirdDigit))
+            {
+                videoTitle += "802";
+            }
+            else
+            {
+                videoTitle += "804";
+            }
+            console.log("videoTitle: " + videoTitle);
+        }
+    })
+    .then(function() {
+        document.getElementById("video-src").src = "videos/" + videoTitle + ".mp4";
+        document.getElementById("background-vid").load();
+        //set background video
+    })
+    .catch(function() {
+        document.getElementById("location").innerHTML = "City not found"; //degree symbol
+        //set city to the city in the json
+        document.getElementById("temperatureId").innerHTML = ":(";
+        document.getElementById("video-src").src = "videos/d300.mp4";
+        document.getElementById("background-vid").load();
+    });
+    
+    
+    
+
+    
     // console.log(response.json().main.temp);
     //document.getElementById("temp-output").innerHTML = JSON.stringify(temp);
             //.json();
-
-    document.getElementById("lightning-vid").className = "fullscreen-vid__playing";
-    // myVid.width = 180;
-    // myVid.height = 230;
-    animateButton();
-
-
-
-}
-
-
-function testButton()
-{
-    const city = document.getElementById("city-input").value;
-
-    //get all elements with class "weather-square" - within there going to get more elements
-    //loop and create all different weathers
-    //1 set .innerHTML of class "city" elements to "City " + i
-    //2 set .innerHTL of class "temp" elements to a random number from 15 - 99
-    //3 set className of class "fullscreen_vid__video" to "fullscreen_vid__playing"
-    //4 set src of class "src-class" to "videos/" + i + ".mp4"
-    //5 load video from #3 document.getElementById("lightning-vid").load();
-
-    
-
-
-    document.getElementById("location").innerHTML = "City Name";
-    document.getElementById("temperatureId").innerHTML = "39&#176";
+            
     // document.getElementById("lightning-vid").className = "fullscreen-vid__playing";
-    
-    //var rand = Math.floor(Math.random() * 16);
-    //console.log(rand);
-    document.getElementById("video-src").src = "videos/" + city + ".mp4";
-    document.getElementById("lightning-vid").load();
     // myVid.width = 180;
     // myVid.height = 230;
-    //animateButton();
+
+
 }
 
-function animateButton()
+//gets if the sun is up based on time-sunset is positive or time-sunrise is negative
+function isSun(time, sunrise, sunset)
 {
-    document.getElementById('squareOne').className = 'classname';
+    //if later than sunset, return false
+    if (time - sunset > 0 || time-sunrise < 0)
+    {
+        return false;
+    }
+    return true;
 }
+

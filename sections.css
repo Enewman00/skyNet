@@ -26,24 +26,6 @@ body
 
 }
 
-/* .fullscreen-vid
-{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -100;
-} */
-/* 
-#lightning-vid
-{
-    width: 180px;
-    height: 230px;
-    object-fit: cover;
-    overflow: hidden;
-} */
 .fullscreen-vid__video {
     position: fixed;
     right: 0;
