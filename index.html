@@ -20,18 +20,28 @@
 
 
 <div class="main">
-    <div class="title-div">
-        <h1 class = title-text>Weather Board</h1>
-    </div>
+
+    <!-- <div class="background-div"> -->
+        <video loop muted autoplay class="fullscreen-vid__video" id="lightning-vid">
+            <source class="src-class" id="video-src" src="videos/0.mp4" type="video/mp4">
+        </video>
+    <!-- </div> -->
+
+    
     <div class="input-div">
         <input type="text" id="city-input" placeholder="City"/>
         <button class="plus-btn" onclick=getTemperature()>+</button>
         <button class="plus-btn" onclick=testButton()>test</button>
     </div>
 
+    <div class="weather-info">
+        <h2 class="city" id="location"></h2>
+        <p class="temp" id="temperatureId"></p>
+    </div>
+
 
     <!-- square 1 -->
-    <div class="weather-square" id="squareOne">
+    <!-- <div class="weather-square" id="squareOne">
         <div class="fullscreen-vid">
             <video loop muted autoplay class="fullscreen-vid__video" id="lightning-vid">
                 <source class="src-class" id="video-src" src="pictures/drizzlenight.mp4" type="video/mp4">
@@ -41,204 +51,7 @@
             <h2 class="city" id="location"></h2>
             <p class="temp" id="temperatureId"></p>
         </div>
-    </div>
-
-
-    <!-- square 2 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 3 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 4 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 5 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 6 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 7 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 8 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 9 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 10 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 11 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 12 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 13 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 14 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 15 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-
-    <!-- square 16 -->
-    <div class="weather-square">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video">
-                <source class="src-class" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city"></h2>
-            <p class="temp"></p>
-        </div>
-    </div>
-    
+    </div>    -->
 
 </div>
 

@@ -46,6 +46,7 @@ function getTemperature()
 
 function testButton()
 {
+    const city = document.getElementById("city-input").value;
 
     //get all elements with class "weather-square" - within there going to get more elements
     //loop and create all different weathers
@@ -56,44 +57,16 @@ function testButton()
     //5 load video from #3 document.getElementById("lightning-vid").load();
 
     
-    var squares = document.getElementsByClassName("weather-square");
-    var cities = document.getElementsByClassName("city");
-    var temperatures = document.getElementsByClassName("temp");
-    var videos = document.getElementsByClassName("fullscreen-vid__video");
-    var sources = document.getElementsByClassName("src-class");
-
-    var i = 0;
-    // while (videos.length > 0)
-    while (i < 4)
-    {
-        console.log(videos.length);
-        console.log(i);
-        //1 set .innerHTML of class "city" elements to "City " + i
-        cities[i].innerHTML = "City " + i;
-
-        //2 set .innerHTL of class "temp" elements to a random number from 15 - 99
-        //temperatures[i].innerHTML = (Math.floor(Math.random() * (99 - 15) + 15) + minimum )+ "&#176";
-        temperatures[i].innerHTML = "58&#176";
-
-        //3 set className of class "fullscreen_vid__video" to "fullscreen_vid__playing"
-        
-        //4 set src of class "src-class" to "videos/" + i + ".mp4"
-        sources[i].src = "videos/" + i + ".mp4";
-        
-        //5 load video from #3 document.getElementById("lightning-vid").load();
-        videos[0].load();
-        videos[0].className = "fullscreen-vid__playing";
-        i++;
-    }
 
 
-    // document.getElementById("location").innerHTML = city + "";
-    // document.getElementById("temperatureId").innerHTML = "39&#176";
+    document.getElementById("location").innerHTML = "City Name";
+    document.getElementById("temperatureId").innerHTML = "39&#176";
     // document.getElementById("lightning-vid").className = "fullscreen-vid__playing";
     
-    
-    // document.getElementById("video-src").src = "pictures/drizzleday.mp4";
-    // document.getElementById("lightning-vid").load();
+    //var rand = Math.floor(Math.random() * 16);
+    //console.log(rand);
+    document.getElementById("video-src").src = "videos/" + city + ".mp4";
+    document.getElementById("lightning-vid").load();
     // myVid.width = 180;
     // myVid.height = 230;
     //animateButton();
