@@ -15,7 +15,9 @@
 // 80x - clouds
 function getTemperature()
 {
+
     const city = document.getElementById("city-input").value;
+    document.getElementById("city-input").value = "";
     var temp;
     var videoTitle = "";
 

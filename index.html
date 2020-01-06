@@ -29,12 +29,15 @@
 
     
     <div class="input-div">
-        <input type="text" id="city-input" placeholder="City"/>
-        <button class="plus-btn" onclick=getTemperature()>+</button>
+    <form onsubmit="getTemperature()" action="">
+        <input type="text" id="city-input" placeholder="Enter a city or zip code"/>
+        <input type="submit" style="display: none" />
+    </form>
+            
     </div>
 
     <div class="weather-info">
-        <h2 class="city" id="location"></h2>
+        <p class="city" id="location"></h2>
         <p class="temp" id="temperatureId"></p>
         <div class="additional-info">
             <p class="info" id="feels-like"></p>
@@ -43,19 +46,6 @@
         </div>
     </div>
 
-
-    <!-- square 1 -->
-    <!-- <div class="weather-square" id="squareOne">
-        <div class="fullscreen-vid">
-            <video loop muted autoplay class="fullscreen-vid__video" id="lightning-vid">
-                <source class="src-class" id="video-src" src="pictures/drizzlenight.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="square-text">
-            <h2 class="city" id="location"></h2>
-            <p class="temp" id="temperatureId"></p>
-        </div>
-    </div>    -->
 
 </div>
 
