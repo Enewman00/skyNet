@@ -102,10 +102,9 @@ function getTemperature()
     });
     
     
-    
 
     
-    // console.log(response.json().main.temp);
+    // console.g(response.json().main.temp);
     //document.getElementById("temp-output").innerHTML = JSON.stringify(temp);
             //.json();
             
