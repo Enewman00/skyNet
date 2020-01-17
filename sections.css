@@ -100,10 +100,10 @@ body
     outline:none;
     border-color: #005985;
     /* width: 20%; */
-    box-shadow:
-        0 0 50px #fff,            /* outer white */
-        -10px 0 80px #fff,        /* outer left magenta */
-        10px 0 80px #fff;         /* outer right cyan */
+    /* box-shadow:
+        0 0 50px #fff,            
+        -10px 0 80px #fff,        
+        10px 0 80px #fff;          */
 }
 
 
